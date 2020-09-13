@@ -1,0 +1,6 @@
+mutation($id: ID, $name: String!) {
+  postCategory(id: $id, name: $name) {
+    id
+    name
+  }
+}

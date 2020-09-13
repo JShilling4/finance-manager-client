@@ -1,0 +1,27 @@
+mutation(
+  $id: ID!
+  $accountId: Int!
+  $categoryId: Int!
+  $payeeId: Int
+  $type: String!
+  $amount: Float!
+  $cleared: Boolean!
+  $clearedDatetime: Date!
+  $description: String
+) {
+  deleteTransaction(
+    id: $id
+    accountId: $accountId
+    categoryId: $categoryId
+    payeeId: $payeeId
+    type: $type
+    cleared: $cleared
+    clearedDatetime: $clearedDatetime
+    amount: $amount
+    description: $description
+  ) {
+    id
+    name
+    balance
+  }
+}

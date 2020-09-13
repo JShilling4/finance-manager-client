@@ -1,0 +1,22 @@
+query($id: ID!) {
+  getTransaction(id: $id) {
+    id
+    type
+    amount
+    clearedDatetime
+    cleared
+    clearedAccountBalance
+    account {
+      id
+      name
+    }
+    category {
+      id
+      name
+    }
+    payee {
+      id
+      name
+    }
+  }
+}
