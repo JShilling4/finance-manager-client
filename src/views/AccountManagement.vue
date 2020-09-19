@@ -58,6 +58,7 @@
           <v-text-field
             height="24px"
             label="Name"
+            color="#9072ea"
             v-model="localAccount.name"
             :rules="[(v) => !!v || 'Name is required']"
             required
@@ -68,6 +69,7 @@
             v-if="action === 'add'"
             height="24px"
             label="Balance"
+            color="#9072ea"
             v-model="localAccount.balance"
             :rules="[(v) => !!v || 'Amount is required']"
             required

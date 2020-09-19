@@ -54,6 +54,7 @@
           <v-text-field
             height="24px"
             label="Name"
+            color="#9072ea"
             v-model="localCategory.name"
             :rules="[(v) => !!v || 'Name is required']"
             required
