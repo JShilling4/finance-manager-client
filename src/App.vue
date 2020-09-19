@@ -3,7 +3,7 @@
     <v-app>
       <div id="nav">
         <router-link to="/">Checkbook</router-link> |
-        <router-link to="/about">Budget</router-link>
+        <router-link to="/budget">Budget</router-link>
       </div>
       <side-nav />
       <router-view />
