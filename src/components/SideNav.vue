@@ -2,15 +2,15 @@
   <div class="sideNav-list">
     <AccountList :accounts="accounts.accounts" />
     <div class="navLink-container">
-      <router-link to="/account-management" class="navLink"
-        >Account Management</router-link
-      >
-      <router-link to="/category-management" class="navLink"
-        >Category Management</router-link
-      >
-      <router-link to="/payee-management" class="navLink"
-        >Payee Management</router-link
-      >
+      <router-link to="/account-management" class="navLink">
+        Account Management
+      </router-link>
+      <router-link to="/category-management" class="navLink">
+        Category Management
+      </router-link>
+      <router-link to="/payee-management" class="navLink">
+        Payee Management
+      </router-link>
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@ export default {
   list-style: none;
   padding: 0 1rem 2rem;
   margin: 0;
-  width: 20rem;
+  width: 17rem;
   height: 100%;
   background: linear-gradient(to bottom, #1a1a1a, #534a65);
   background-size: contain;

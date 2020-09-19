@@ -375,7 +375,7 @@ export default {
 
 <style lang="scss" scoped>
 .checkbook {
-  margin-left: 20rem;
+  margin-left: 17rem;
 }
 // TABLE MANAGER
 .transactionTable {
