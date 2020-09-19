@@ -6,8 +6,15 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 
 // HTTP connection to the API
 const httpLink = new HttpLink({
+  uri:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:4000/graphql"
+      : "https://sw-finance-manager.herokuapp.com/graphql",
+});
+const httpLink = new HttpLink({
   // You should use an absolute URL here
-  uri: "http://localhost:4000/graphql",
+
+  uri: "",
 });
 
 const defaultOptions = {
