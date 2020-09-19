@@ -109,7 +109,7 @@ export default {
     async initializeCategoryModal(action, category = null) {
       this.action = action;
       if (action == "add") {
-        this.localCategory = this.defaultCategory;
+        this.localCategory = this.cloneObject(this.defaultCategory);
         this.categoryModalShowing = true;
       }
       if (action == "edit") {
@@ -119,7 +119,6 @@ export default {
       this.resetValidity();
     },
     closeCategoryModal() {
-      this.localCategory = this.cloneObject(this.defaultCategory);
       this.categoryModalShowing = false;
     },
     async postCategory() {
