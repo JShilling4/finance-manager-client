@@ -11,11 +11,6 @@ const httpLink = new HttpLink({
       ? "http://localhost:4000/graphql"
       : "https://sw-finance-manager.herokuapp.com/graphql",
 });
-const httpLink = new HttpLink({
-  // You should use an absolute URL here
-
-  uri: "",
-});
 
 const defaultOptions = {
   watchQuery: {
