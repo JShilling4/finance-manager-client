@@ -13,9 +13,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Config files
-auth_config.json
-
 # Editor directories and files
 .idea
 .vscode
