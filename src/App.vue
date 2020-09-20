@@ -2,10 +2,23 @@
   <div id="app">
     <v-app>
       <div id="nav">
-        <router-link to="/">Checkbook</router-link> |
-        <router-link to="/budget">Budget</router-link>
+        <v-btn v-if="!$auth.isAuthenticated && !$auth.loading" @click="login"
+          >Login</v-btn
+        >
+        <router-link v-if="$auth.isAuthenticated" to="/">Checkbook</router-link>
+        <span v-if="$auth.isAuthenticated">|</span>
+        <router-link v-if="$auth.isAuthenticated" to="/budget"
+          >Budget</router-link
+        >
+        <v-btn
+          v-if="$auth.isAuthenticated && !$auth.loading"
+          @click="logout"
+          x-small
+          class="ml-4"
+          >Logout</v-btn
+        >
       </div>
-      <side-nav />
+      <side-nav v-if="$auth.isAuthenticated" />
       <router-view />
     </v-app>
   </div>
@@ -21,7 +34,15 @@ export default {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    login() {
+      this.$auth.loginWithRedirect();
+    },
+    logout() {
+      this.$auth.logout();
+      this.$router.push({ path: "/" });
+    },
+  },
 };
 </script>
 
@@ -55,6 +76,7 @@ body {
 #nav {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding: 2rem;
   background: linear-gradient(to top, #1a1a1a, #534a65);
   color: #fff;

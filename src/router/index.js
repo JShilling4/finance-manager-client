@@ -4,17 +4,28 @@ import Checkbook from "../views/Checkbook";
 import AccountManagement from "../views/AccountManagement";
 import CategoryManagement from "../views/CategoryManagement";
 import PayeeManagement from "../views/PayeeManagement";
+import Home from "../views/Home";
+import { authGuard } from "../auth";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
+    name: "home",
+    meta: {
+      title: "Finance Manager",
+    },
+    component: Home,
+  },
+  {
+    path: "/checkbook",
     name: "checkbook",
     meta: {
       title: "Finance Manager | Checkbook",
     },
     component: Checkbook,
+    beforeEnter: authGuard,
   },
   {
     path: "/budget",
@@ -24,6 +35,7 @@ const routes = [
     },
     component: () =>
       import(/* webpackChunkName: "budget" */ "../views/Budget.vue"),
+    beforeEnter: authGuard,
   },
   {
     path: "/account-management",
@@ -32,6 +44,7 @@ const routes = [
       title: "Finance Manager | Accounts",
     },
     component: AccountManagement,
+    beforeEnter: authGuard,
   },
   {
     path: "/category-management",
@@ -40,6 +53,7 @@ const routes = [
       title: "Finance Manager | Categories",
     },
     component: CategoryManagement,
+    beforeEnter: authGuard,
   },
   {
     path: "/payee-management",
@@ -48,6 +62,7 @@ const routes = [
       title: "Finance Manager | Payees",
     },
     component: PayeeManagement,
+    beforeEnter: authGuard,
   },
 ];
 
