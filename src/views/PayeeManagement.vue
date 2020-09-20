@@ -58,11 +58,21 @@
           <!-- Footer controls -->
           <v-card-actions class="pb-4">
             <v-spacer></v-spacer>
-            <v-btn width="140px" color="error" @click="closePayeeModal">
-              Cancel
-            </v-btn>
-            <v-btn width="140px" color="success" @click="postPayee">
+            <v-btn
+              width="140px"
+              color="#9072ea"
+              :outlined="true"
+              @click="postPayee"
+            >
               Save
+            </v-btn>
+            <v-btn
+              width="140px"
+              color="#000"
+              :outlined="true"
+              @click="closePayeeModal"
+            >
+              Cancel
             </v-btn>
           </v-card-actions>
         </v-form>

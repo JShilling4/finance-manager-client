@@ -89,12 +89,22 @@
       <v-card class="px-8 pt-2">
         <h2 class="headline text-center mb-2">Add Transaction</h2>
         <!-- Header controls -->
-        <v-row justify="center">
+        <v-row justify="center" class="mb-4">
           <div>
-            <v-btn-toggle v-model="localTransaction.type" mandatory>
-              <v-btn :x-small="true" value="debit">Expense</v-btn>
-              <v-btn :x-small="true" value="credit">Income</v-btn>
-              <v-btn :x-small="true" value="transfer">Transfer</v-btn>
+            <v-btn-toggle
+              v-model="localTransaction.type"
+              color="#9072ea"
+              mandatory
+            >
+              <v-btn :x-small="true" :outlined="true" value="debit"
+                >Expense</v-btn
+              >
+              <v-btn :x-small="true" :outlined="true" value="credit"
+                >Income</v-btn
+              >
+              <v-btn :x-small="true" :outlined="true" value="transfer"
+                >Transfer</v-btn
+              >
             </v-btn-toggle>
           </div>
         </v-row>
@@ -200,11 +210,21 @@
           <!-- Footer controls -->
           <v-card-actions class="pb-4">
             <v-spacer></v-spacer>
-            <v-btn width="140px" color="error" @click="closeTransactionModal">
-              Cancel
-            </v-btn>
-            <v-btn width="140px" color="success" @click="postTransaction">
+            <v-btn
+              width="140px"
+              color="#9072ea"
+              :outlined="true"
+              @click="postTransaction"
+            >
               Save
+            </v-btn>
+            <v-btn
+              width="140px"
+              color="#000"
+              :outlined="true"
+              @click="closeTransactionModal"
+            >
+              Cancel
             </v-btn>
           </v-card-actions>
         </v-form>
